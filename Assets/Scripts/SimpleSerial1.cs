@@ -6,9 +6,8 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Threading;
 
-public class SimpleSerial : MonoBehaviour
+public class SimpleSerialOther : MonoBehaviour
 {
-    public static SimpleSerial Instance { get; private set; }
     public String portName = "COM7";  // use the port name for your Arduino, such as /dev/tty.usbmodem1411 for Mac or COM3 for PC
     public GameObject leftPaddle, rightPaddle;
 
@@ -22,10 +21,9 @@ public class SimpleSerial : MonoBehaviour
     Thread thread;
     public List<bool> isPressed;
     public List<bool> isLit;
-    private string prevOutputString;
+
     void Start()
     {
-        Instance = this;
         isPressed = new List<bool>();
         isLit = new List<bool>();
         for (int i = 0; i < 23; i++)
@@ -33,7 +31,6 @@ public class SimpleSerial : MonoBehaviour
             isPressed.Add(false);
             isLit.Add(false);
         }
-        prevOutputString = "";
         try
         {
             serialPort = new SerialPort();
@@ -69,9 +66,9 @@ public class SimpleSerial : MonoBehaviour
 
     void Update()
     {
-        if (serialInput != null && serialInput != "")
+        if (serialInput != null)
         {
-            //print(serialInput);
+            print(serialInput);
             string[] JoystickData = serialInput.Split('|');  // parses using semicolon ; into a string array called strEul. I originally was sending Euler angles for gyroscopes
 
             for (int i = 0; i < JoystickData.Length; i++)
@@ -135,33 +132,21 @@ public class SimpleSerial : MonoBehaviour
                 
             }
         }
-        
         string outputString = "";
 
         for (int i = 0; i < isLit.Count; i++)
         {
             if (isLit[i] == true)
             {
-                outputString += "0";
+                outputString += "1";
             }
             else
             {
-                outputString += "1";
+                outputString += "0";
             }
-            
+            serialPort.WriteLine(outputString);
         }
-
-        if (prevOutputString != outputString)
-        {
-            print("printing");
-            //serialPort.WriteLine(outputString);
-        }
-        prevOutputString = outputString;
-        serialInput = null;
-
-
-
-
+        
     }
 
     public static float map(float value, float leftMin, float leftMax, float rightMin, float rightMax)
