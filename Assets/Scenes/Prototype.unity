@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.06
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.7283569, g: 0.5608757, b: 0.8679245, a: 1}
+  m_AmbientEquatorColor: {r: 0.21056673, g: 0.120016016, b: 0.2924528, a: 1}
+  m_AmbientGroundColor: {r: 0.077041306, g: 0.033641856, b: 0.11320752, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 0a4f4a9abf7854c408fd14d3cb3719f5, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 36fd1cce0e97a4440b68d4fcc8be6cdf, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 8900000, guid: abb9b99d814d3d148b8826e941111712, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16541496, g: 0.17017403, b: 0.2430136, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.00009638959, g: 0.00010423, b: 0.00009638959, a: 0.3}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1249,6 +1249,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cada352ecfada489dc631a9deee83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1403498508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403498512}
+  - component: {fileID: 1403498511}
+  - component: {fileID: 1403498510}
+  - component: {fileID: 1403498509}
+  m_Layer: 0
+  m_Name: Cube (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1403498509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403498508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1403498510
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403498508}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1403498511
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403498508}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1403498512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403498508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.7, y: -0.49, z: -37.76}
+  m_LocalScale: {x: 12.64879, y: 10.01468, z: 12.64879}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478130601
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,6 +2865,7 @@ GameObject:
   - component: {fileID: 249357652130058291}
   - component: {fileID: 249357652130058293}
   - component: {fileID: 249357652130058292}
+  - component: {fileID: 249357652130058294}
   m_Layer: 8
   m_Name: Button15
   m_TagString: Button
@@ -2787,7 +2881,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249357652130058289}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -2802,7 +2896,7 @@ BoxCollider:
   m_GameObject: {fileID: 249357652130058289}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.019999998, y: 0.019999994, z: 0.016225763}
   m_Center: {x: 0.000000119153086, y: -0.000000001045675, z: 0.0018864}
@@ -2914,6 +3008,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &249357652130058294
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249357652130058289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!4 &304999802400870479
 Transform:
   m_ObjectHideFlags: 0
@@ -3324,6 +3432,7 @@ GameObject:
   - component: {fileID: 1322556871168751188}
   - component: {fileID: 1322556871168751190}
   - component: {fileID: 1322556871168751189}
+  - component: {fileID: 1322556871168751191}
   m_Layer: 8
   m_Name: Button9
   m_TagString: Button
@@ -3339,7 +3448,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322556871168751186}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -3354,7 +3463,7 @@ BoxCollider:
   m_GameObject: {fileID: 1322556871168751186}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.004262609, y: 0.004262611, z: 0.0034997617}
   m_Center: {x: -0.000000029592584, y: 0.00000023863694, z: 0.00038596994}
@@ -3466,6 +3575,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &1322556871168751191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322556871168751186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!33 &1381859091604260986
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3490,6 +3613,7 @@ GameObject:
   - component: {fileID: 1414352773785926389}
   - component: {fileID: 1414352773785926391}
   - component: {fileID: 1414352773785926390}
+  - component: {fileID: 1414352773785926392}
   m_Layer: 8
   m_Name: Button23
   m_TagString: Button
@@ -3505,7 +3629,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414352773785926387}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -3520,7 +3644,7 @@ BoxCollider:
   m_GameObject: {fileID: 1414352773785926387}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.019999998, y: 0.01999999, z: 0.016624674}
   m_Center: {x: 9.312089e-10, y: -0.0000009538626, z: 0.0016871874}
@@ -3632,6 +3756,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &1414352773785926392
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414352773785926387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!23 &1438628946655197475
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3863,6 +4001,7 @@ GameObject:
   - component: {fileID: 1733787761219074972}
   - component: {fileID: 1733787761219074974}
   - component: {fileID: 1733787761219074973}
+  - component: {fileID: 1733787761219074975}
   m_Layer: 8
   m_Name: Button20
   m_TagString: Button
@@ -3878,7 +4017,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733787761219074970}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -3893,7 +4032,7 @@ BoxCollider:
   m_GameObject: {fileID: 1733787761219074970}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.0042717583, y: 0.0042717527, z: 0.0035833095}
   m_Center: {x: -0.00000008956941, y: 0.0000002385736, z: -0.00034446453}
@@ -4005,6 +4144,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &1733787761219074975
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733787761219074970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!23 &1761692596580455164
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4112,6 +4265,7 @@ GameObject:
   - component: {fileID: 2055724854076280369}
   - component: {fileID: 2055724854076280371}
   - component: {fileID: 2055724854076280370}
+  - component: {fileID: 2055724854076280372}
   m_Layer: 8
   m_Name: Button21
   m_TagString: Button
@@ -4127,7 +4281,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055724854076280367}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -4142,7 +4296,7 @@ BoxCollider:
   m_GameObject: {fileID: 2055724854076280367}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.0042717573, y: 0.0042717527, z: 0.003464832}
   m_Center: {x: -0.000000059610045, y: -3.789846e-10, z: -0.00040394024}
@@ -4254,6 +4408,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2055724854076280372
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055724854076280367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!1 &2086749487859093797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,6 +4477,7 @@ GameObject:
   - component: {fileID: 2161239660805546461}
   - component: {fileID: 2161239660805546463}
   - component: {fileID: 2161239660805546462}
+  - component: {fileID: 2161239660805546464}
   m_Layer: 8
   m_Name: Button14
   m_TagString: Button
@@ -4324,7 +4493,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2161239660805546459}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -4339,7 +4508,7 @@ BoxCollider:
   m_GameObject: {fileID: 2161239660805546459}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.004262608, y: 0.0042626113, z: 0.0035340253}
   m_Center: {x: -0.000000015121367, y: -4.0498875e-11, z: 0.00036898503}
@@ -4451,6 +4620,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2161239660805546464
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161239660805546459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!4 &2299441859028221146
 Transform:
   m_ObjectHideFlags: 0
@@ -4508,6 +4691,7 @@ GameObject:
   - component: {fileID: 2374444650720398581}
   - component: {fileID: 2374444650720398583}
   - component: {fileID: 2374444650720398582}
+  - component: {fileID: 2374444650720398584}
   m_Layer: 8
   m_Name: Button11
   m_TagString: Button
@@ -4523,7 +4707,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2374444650720398579}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -4538,7 +4722,7 @@ BoxCollider:
   m_GameObject: {fileID: 2374444650720398579}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020000007, y: 0.020000009, z: 0.016047308}
   m_Center: {x: 8.061386e-10, y: -1.1802469e-10, z: -0.0019765971}
@@ -4650,6 +4834,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2374444650720398584
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374444650720398579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!4 &2579354085235596957
 Transform:
   m_ObjectHideFlags: 0
@@ -4743,6 +4941,7 @@ GameObject:
   - component: {fileID: 2851004067186245049}
   - component: {fileID: 2851004067186245051}
   - component: {fileID: 2851004067186245050}
+  - component: {fileID: 2851004067186245052}
   m_Layer: 8
   m_Name: Button2
   m_TagString: Button
@@ -4758,7 +4957,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2851004067186245047}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -4773,7 +4972,7 @@ BoxCollider:
   m_GameObject: {fileID: 2851004067186245047}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020000013, y: 0.02000001, z: 0.0166921}
   m_Center: {x: 0.00000023923215, y: -0.0000009544603, z: 0.0016539588}
@@ -4885,6 +5084,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2851004067186245052
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851004067186245047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!4 &2859123686932920365
 Transform:
   m_ObjectHideFlags: 0
@@ -4994,6 +5207,7 @@ GameObject:
   - component: {fileID: 3296979145179222853}
   - component: {fileID: 3296979145179222855}
   - component: {fileID: 3296979145179222854}
+  - component: {fileID: 3296979145179222856}
   m_Layer: 8
   m_Name: Button7
   m_TagString: Button
@@ -5009,7 +5223,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3296979145179222851}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -5024,7 +5238,7 @@ BoxCollider:
   m_GameObject: {fileID: 3296979145179222851}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999994, z: 0.015783466}
   m_Center: {x: -0.00000011927206, y: 0.0000009543534, z: -0.0021080226}
@@ -5136,6 +5350,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &3296979145179222856
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296979145179222851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!23 &3361987980761578524
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5190,6 +5418,7 @@ GameObject:
   - component: {fileID: 3375868183082367295}
   - component: {fileID: 3375868183082367297}
   - component: {fileID: 3375868183082367296}
+  - component: {fileID: 3375868183082367298}
   m_Layer: 8
   m_Name: Button18
   m_TagString: Button
@@ -5205,7 +5434,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3375868183082367293}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -5220,7 +5449,7 @@ BoxCollider:
   m_GameObject: {fileID: 3375868183082367293}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020000007, y: 0.020000001, z: 0.017048853}
   m_Center: {x: 0.00000047585095, y: -4.4888683e-11, z: -0.0014765271}
@@ -5332,6 +5561,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &3375868183082367298
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375868183082367293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!1 &3501056815361976379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,6 +5790,7 @@ GameObject:
   - component: {fileID: 3787455629527786281}
   - component: {fileID: 3787455629527786283}
   - component: {fileID: 3787455629527786282}
+  - component: {fileID: 3787455629527786284}
   m_Layer: 8
   m_Name: Button5
   m_TagString: Button
@@ -5562,7 +5806,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3787455629527786279}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -5577,7 +5821,7 @@ BoxCollider:
   m_GameObject: {fileID: 3787455629527786279}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.004271758, y: 0.0042717527, z: 0.0038025386}
   m_Center: {x: -6.784541e-12, y: -0.00000011920075, z: 0.00023437131}
@@ -5689,6 +5933,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &3787455629527786284
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3787455629527786279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!1 &3901288420927675262
 GameObject:
   m_ObjectHideFlags: 0
@@ -5704,6 +5962,7 @@ GameObject:
   - component: {fileID: 3901288420927675264}
   - component: {fileID: 3901288420927675266}
   - component: {fileID: 3901288420927675265}
+  - component: {fileID: 3901288420927675267}
   m_Layer: 8
   m_Name: Button8
   m_TagString: Button
@@ -5719,7 +5978,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3901288420927675262}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -5734,7 +5993,7 @@ BoxCollider:
   m_GameObject: {fileID: 3901288420927675262}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.004262609, y: 0.004262612, z: 0.0036402815}
   m_Center: {x: 0.000000059450183, y: -0.00000011924169, z: 0.00031573896}
@@ -5846,6 +6105,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &3901288420927675267
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3901288420927675262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!1 &3994308701415751234
 GameObject:
   m_ObjectHideFlags: 0
@@ -5861,6 +6134,7 @@ GameObject:
   - component: {fileID: 3994308701415751236}
   - component: {fileID: 3994308701415751238}
   - component: {fileID: 3994308701415751237}
+  - component: {fileID: 3994308701415751239}
   m_Layer: 8
   m_Name: Button4
   m_TagString: Button
@@ -5876,7 +6150,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3994308701415751234}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -5891,7 +6165,7 @@ BoxCollider:
   m_GameObject: {fileID: 3994308701415751234}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.004262608, y: 0.0042626127, z: 0.0037686704}
   m_Center: {x: -0.000000059812, y: 0.00000011941339, z: 0.00025106856}
@@ -6003,6 +6277,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &3994308701415751239
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994308701415751234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!33 &4012610411703505613
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6026,6 +6314,7 @@ GameObject:
   - component: {fileID: 4055224387781432715}
   - component: {fileID: 4055224387781432717}
   - component: {fileID: 4055224387781432716}
+  - component: {fileID: 4055224387781432718}
   m_Layer: 8
   m_Name: Button13
   m_TagString: Button
@@ -6041,7 +6330,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4055224387781432713}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -6056,7 +6345,7 @@ BoxCollider:
   m_GameObject: {fileID: 4055224387781432713}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.020000003, z: 0.015998648}
   m_Center: {x: -0.0000004768726, y: -8.711119e-11, z: 0.0020006702}
@@ -6168,6 +6457,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &4055224387781432718
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055224387781432713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!33 &4200004913536841890
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6576,6 +6879,7 @@ GameObject:
   - component: {fileID: 5160494027210617334}
   - component: {fileID: 5160494027210617336}
   - component: {fileID: 5160494027210617335}
+  - component: {fileID: 5160494027210617337}
   m_Layer: 8
   m_Name: Button3
   m_TagString: Button
@@ -6591,7 +6895,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5160494027210617332}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -6606,7 +6910,7 @@ BoxCollider:
   m_GameObject: {fileID: 5160494027210617332}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.0042626075, y: 0.0042626113, z: 0.0033733067}
   m_Center: {x: -2.3812857e-10, y: 0.00000023846843, z: 0.00044910607}
@@ -6718,6 +7022,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &5160494027210617337
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160494027210617332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!23 &5195967708834251490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6798,6 +7116,7 @@ GameObject:
   - component: {fileID: 5478411899179985612}
   - component: {fileID: 5478411899179985614}
   - component: {fileID: 5478411899179985613}
+  - component: {fileID: 5478411899179985615}
   m_Layer: 8
   m_Name: Button19
   m_TagString: Button
@@ -6813,7 +7132,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5478411899179985610}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -6828,7 +7147,7 @@ BoxCollider:
   m_GameObject: {fileID: 5478411899179985610}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.019999998, y: 0.019999994, z: 0.016448373}
   m_Center: {x: -0.00000023835904, y: -7.055266e-11, z: -0.001775811}
@@ -6940,6 +7259,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &5478411899179985615
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478411899179985610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!23 &5481554805922099524
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7231,6 +7564,7 @@ GameObject:
   - component: {fileID: 6319120416184652079}
   - component: {fileID: 6319120416184652081}
   - component: {fileID: 6319120416184652080}
+  - component: {fileID: 6319120416184652082}
   m_Layer: 8
   m_Name: Button22
   m_TagString: Button
@@ -7246,7 +7580,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6319120416184652077}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -7261,7 +7595,7 @@ BoxCollider:
   m_GameObject: {fileID: 6319120416184652077}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020000001, y: 0.020000001, z: 0.016815616}
   m_Center: {x: -0.00000011901059, y: -5.558682e-11, z: 0.001592669}
@@ -7373,6 +7707,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &6319120416184652082
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6319120416184652077}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}
 --- !u!4 &6328597067909909641
 Transform:
   m_ObjectHideFlags: 0
@@ -7573,6 +7921,7 @@ GameObject:
   - component: {fileID: 6764144030402739579}
   - component: {fileID: 6764144030402739581}
   - component: {fileID: 6764144030402739580}
+  - component: {fileID: 6764144030402739582}
   m_Layer: 8
   m_Name: Button17
   m_TagString: Button
@@ -7588,7 +7937,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6764144030402739577}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -7603,7 +7952,7 @@ BoxCollider:
   m_GameObject: {fileID: 6764144030402739577}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.0042717573, y: 0.004271753, z: 0.003364541}
   m_Center: {x: 0.000000059597454, y: -0.00000023841932, z: -0.00045384787}
@@ -7715,6 +8064,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &6764144030402739582
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764144030402739577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!4 &6884772796461423218
 Transform:
   m_ObjectHideFlags: 0
@@ -7758,6 +8121,7 @@ GameObject:
   - component: {fileID: 6940314872401892395}
   - component: {fileID: 6940314872401892397}
   - component: {fileID: 6940314872401892396}
+  - component: {fileID: 6940314872401892398}
   m_Layer: 8
   m_Name: Button16
   m_TagString: Button
@@ -7773,7 +8137,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6940314872401892393}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -7788,7 +8152,7 @@ BoxCollider:
   m_GameObject: {fileID: 6940314872401892393}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.00426261, y: 0.0042626113, z: 0.0037615404}
   m_Center: {x: -2.1195427e-10, y: -0.00000011918305, z: -0.0002553482}
@@ -7900,6 +8264,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &6940314872401892398
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6940314872401892393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!23 &7021819691463804225
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8103,6 +8481,7 @@ GameObject:
   - component: {fileID: 7436257115735246467}
   - component: {fileID: 7436257115735246468}
   - component: {fileID: 7436257115735246469}
+  - component: {fileID: 7436257115735246470}
   m_Layer: 8
   m_Name: Button1
   m_TagString: Button
@@ -8118,7 +8497,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7436257115735246465}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -8133,7 +8512,7 @@ BoxCollider:
   m_GameObject: {fileID: 7436257115735246465}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.004271758, y: 0.0042717527, z: 0.003464371}
   m_Center: {x: 0.00000005981619, y: 0.00000023862736, z: 0.00040369548}
@@ -8245,6 +8624,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4510ccd72c8fb14d8b7081c350a40cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &7436257115735246470
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436257115735246465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!23 &7474017947000435055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8488,7 +8881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd9878f2996ee24987298fafccb0882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM6
+  portName: COM3
   leftPaddle: {fileID: 0}
   rightPaddle: {fileID: 0}
   isPressed: 
@@ -8776,6 +9169,7 @@ GameObject:
   - component: {fileID: 8731539931221226558}
   - component: {fileID: 8731539931221226560}
   - component: {fileID: 8731539931221226559}
+  - component: {fileID: 8731539931221226561}
   m_Layer: 8
   m_Name: Button12
   m_TagString: Button
@@ -8791,7 +9185,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731539931221226556}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -8806,7 +9200,7 @@ BoxCollider:
   m_GameObject: {fileID: 8731539931221226556}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.0042717573, y: 0.0042717517, z: 0.0035530494}
   m_Center: {x: 0.00000005963156, y: -0.00000023843901, z: 0.00035923615}
@@ -8918,6 +9312,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &8731539931221226561
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731539931221226556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!4 &8789802065545758173
 Transform:
   m_ObjectHideFlags: 0
@@ -9116,6 +9524,7 @@ GameObject:
   - component: {fileID: 9147479721415508942}
   - component: {fileID: 9147479721415508944}
   - component: {fileID: 9147479721415508943}
+  - component: {fileID: 9147479721415508945}
   m_Layer: 8
   m_Name: Button6
   m_TagString: Button
@@ -9131,7 +9540,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9147479721415508940}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -9146,7 +9555,7 @@ BoxCollider:
   m_GameObject: {fileID: 9147479721415508940}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.004262609, y: 0.0042626113, z: 0.0036841286}
   m_Center: {x: 0.00000002999931, y: -0.00000023845018, z: 0.00029387526}
@@ -9258,6 +9667,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &9147479721415508945
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147479721415508940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0021358794
+  m_Height: 0.008
+  m_Direction: 2
+  m_Center: {x: 0.00000005972106, y: 0.000000238535, z: -0.000000059604645}
 --- !u!1 &9168271305171348709
 GameObject:
   m_ObjectHideFlags: 0
@@ -9273,6 +9696,7 @@ GameObject:
   - component: {fileID: 9168271305171348711}
   - component: {fileID: 9168271305171348713}
   - component: {fileID: 9168271305171348712}
+  - component: {fileID: 9168271305171348714}
   m_Layer: 8
   m_Name: Button10
   m_TagString: Button
@@ -9288,7 +9712,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9168271305171348709}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -9303,7 +9727,7 @@ BoxCollider:
   m_GameObject: {fileID: 9168271305171348709}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020000013, y: 0.020000003, z: 0.01618871}
   m_Center: {x: 4.1701254e-10, y: 0.0000019061971, z: -0.0019051733}
@@ -9415,3 +9839,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &9168271305171348714
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168271305171348709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010000006
+  m_Height: 0.04
+  m_Direction: 2
+  m_Center: {x: 0.0000004773028, y: -0.00000095414, z: 0.00000032037497}

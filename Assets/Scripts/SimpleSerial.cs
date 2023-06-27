@@ -22,7 +22,8 @@ public class SimpleSerial : MonoBehaviour
     Thread thread;
     public List<bool> isPressed;
     public List<bool> isLit;
-    private string prevOutputString;
+    private string prevOutputString, outputString;
+    private bool writeString, writingString;
     void Start()
     {
         Instance = this;
@@ -34,6 +35,9 @@ public class SimpleSerial : MonoBehaviour
             isLit.Add(false);
         }
         prevOutputString = "";
+        outputString = "";
+        writeString = false;
+        writingString = false;
         try
         {
             serialPort = new SerialPort();
@@ -47,8 +51,10 @@ public class SimpleSerial : MonoBehaviour
             Debug.Log(e.Message);
         }
         thread = new Thread(new ThreadStart(ProcessData));  // serial events are now handled in a separate thread
-        thread.Start();        
+        thread.Start();
+        StartCoroutine(WriteToSerial("11111111111111111111111"));
     }
+
 
     void ProcessData()
     {
@@ -67,11 +73,24 @@ public class SimpleSerial : MonoBehaviour
         Debug.Log("Thread: Stop");
     }
 
+    IEnumerator WriteToSerial(string s)
+    {
+        if (writingString) yield break;
+        else
+        {
+            writingString = true;
+            serialPort.WriteLine(outputString);
+            yield return new WaitForSeconds(0.11f);
+            writingString = false;
+        }
+        
+    }
+
     void Update()
     {
-        if (serialInput != null && serialInput != "")
+        print(serialInput);
+        if (serialInput != null && serialInput != "" && serialInput.Contains("|"))
         {
-            //print(serialInput);
             string[] JoystickData = serialInput.Split('|');  // parses using semicolon ; into a string array called strEul. I originally was sending Euler angles for gyroscopes
 
             for (int i = 0; i < JoystickData.Length; i++)
@@ -92,7 +111,7 @@ public class SimpleSerial : MonoBehaviour
                             gameObject.transform.GetChild(i).localScale = new Vector3(
                                 t.localScale.x,
                                 t.localScale.y,
-                                t.localScale.z + 10*Time.deltaTime);
+                                t.localScale.z + 15*Time.deltaTime);
                         }
                     }
                     else
@@ -102,7 +121,7 @@ public class SimpleSerial : MonoBehaviour
                             gameObject.transform.GetChild(i).localScale = new Vector3(
                                 t.localScale.x,
                                 t.localScale.y,
-                                t.localScale.z + 50*Time.deltaTime);
+                                t.localScale.z + 75*Time.deltaTime);
                         }
                     }
                     
@@ -136,7 +155,7 @@ public class SimpleSerial : MonoBehaviour
             }
         }
         
-        string outputString = "";
+        outputString = "";
 
         for (int i = 0; i < isLit.Count; i++)
         {
@@ -154,14 +173,15 @@ public class SimpleSerial : MonoBehaviour
         if (prevOutputString != outputString)
         {
             print("printing");
-            //serialPort.WriteLine(outputString);
+            writeString = true;
+            StartCoroutine(WriteToSerial(outputString));
+        }
+        else
+        {
+            writeString = false;
         }
         prevOutputString = outputString;
         serialInput = null;
-
-
-
-
     }
 
     public static float map(float value, float leftMin, float leftMax, float rightMin, float rightMax)
@@ -171,6 +191,8 @@ public class SimpleSerial : MonoBehaviour
 
     public void OnDisable()  // attempts to closes serial port when the gameobject script is on goes away
     {
+        serialPort.WriteLine("11111111111111111111111");
+
         programActive = false;
         if (serialPort != null && serialPort.IsOpen)
             serialPort.Close();

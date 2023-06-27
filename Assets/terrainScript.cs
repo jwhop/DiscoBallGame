@@ -19,6 +19,7 @@ public class terrainScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Button"))
         {
+            print("AAA " + other.gameObject.transform.GetSiblingIndex());
             SimpleSerial.Instance.isLit[other.gameObject.transform.GetSiblingIndex()] = true;
         }
     }

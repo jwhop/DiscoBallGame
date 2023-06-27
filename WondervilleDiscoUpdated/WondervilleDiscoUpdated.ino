@@ -163,6 +163,7 @@ void setup() {
 
   //open serial port (USB)
   Serial.begin(115200);
+  Serial.setTimeout(10);
   //disguise as a keyboard
 
   pressed1 = false;
@@ -229,7 +230,7 @@ void loop() {
     currentValues += "|";
   }
   currentValues = currentValues.substring(0, currentValues.length()-1);
-  if(currentValues != prevStringValues)
+  //if(currentValues != prevStringValues)
   {
     Serial.println(currentValues);
   }
