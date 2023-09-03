@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 0.3
   m_CustomReflection: {fileID: 8900000, guid: abb9b99d814d3d148b8826e941111712, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00009638959, g: 0.00010423, b: 0.00009638959, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.00009741981, g: 0.00010400935, b: 0.00009741981,
+    a: 0.3}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8881,7 +8882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd9878f2996ee24987298fafccb0882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM3
+  portName: COM6
   leftPaddle: {fileID: 0}
   rightPaddle: {fileID: 0}
   isPressed: 
