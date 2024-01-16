@@ -62,7 +62,6 @@
 		<type fullname="FollowTarget" preserve="nothing"/>
 		<type fullname="GoalCube" preserve="nothing"/>
 		<type fullname="HandleScene" preserve="nothing"/>
-		<type fullname="Readme" preserve="nothing"/>
 		<type fullname="SimpleSerial" preserve="nothing"/>
 		<type fullname="terrainScript" preserve="nothing"/>
 	</assembly>

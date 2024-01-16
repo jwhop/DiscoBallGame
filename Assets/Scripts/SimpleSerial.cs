@@ -48,7 +48,7 @@ public class SimpleSerial : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.Log(e.Message);
+            Debug.Log("message is " +e.Message);
         }
         thread = new Thread(new ThreadStart(ProcessData));  // serial events are now handled in a separate thread
         thread.Start();
@@ -78,17 +78,21 @@ public class SimpleSerial : MonoBehaviour
         if (writingString) yield break;
         else
         {
-            writingString = true;
-            serialPort.WriteLine(outputString);
-            yield return new WaitForSeconds(0.11f);
-            writingString = false;
+            if(serialPort != null)
+            {
+                writingString = true;
+                serialPort.WriteLine(outputString);
+                yield return new WaitForSeconds(0.11f);
+                writingString = false;
+            }
+            
         }
         
     }
 
     void Update()
     {
-        print(serialInput);
+        //print(serialInput);
         if (serialInput != null && serialInput != "" && serialInput.Contains("|"))
         {
             string[] JoystickData = serialInput.Split('|');  // parses using semicolon ; into a string array called strEul. I originally was sending Euler angles for gyroscopes
@@ -102,7 +106,7 @@ public class SimpleSerial : MonoBehaviour
                     Transform t = gameObject.transform.GetChild(i);
                     if (!t.gameObject.GetComponent<AudioSource>().isPlaying)
                     {
-                        t.gameObject.GetComponent<AudioSource>().Play();
+                        //t.gameObject.GetComponent<AudioSource>().Play();
                     }
                     if(t.localScale.x == 0.2f)
                     {
@@ -111,7 +115,7 @@ public class SimpleSerial : MonoBehaviour
                             gameObject.transform.GetChild(i).localScale = new Vector3(
                                 t.localScale.x,
                                 t.localScale.y,
-                                t.localScale.z + 15*Time.deltaTime);
+                                t.localScale.z + 10 *Time.deltaTime);
                         }
                     }
                     else
@@ -121,7 +125,7 @@ public class SimpleSerial : MonoBehaviour
                             gameObject.transform.GetChild(i).localScale = new Vector3(
                                 t.localScale.x,
                                 t.localScale.y,
-                                t.localScale.z + 75*Time.deltaTime);
+                                t.localScale.z + 50*Time.deltaTime);
                         }
                     }
                     
@@ -172,7 +176,7 @@ public class SimpleSerial : MonoBehaviour
 
         if (prevOutputString != outputString)
         {
-            print("printing");
+            //print("printing");
             writeString = true;
             StartCoroutine(WriteToSerial(outputString));
         }
