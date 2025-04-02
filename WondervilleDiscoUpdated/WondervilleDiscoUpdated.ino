@@ -44,33 +44,33 @@ const int LEDPin14 = 43; //1 button
 const int buttonPin15 = 46; //1 button
 const int LEDPin15 = 47; //1 button
 
-const int buttonPin16 = A14; //1 button
-const int LEDPin16 = A15; //1 button
+const int buttonPin16 = 50; //1 button
+const int LEDPin16 = 51; //1 button
 
-const int buttonPin17 = A12; //1 button
-const int LEDPin17 = A13; //1 button
+const int buttonPin17 = A14; //1 button
+const int LEDPin17 = A15; //1 button
 
-const int buttonPin18 = A10; //1 button
-const int LEDPin18 = A11; //1 button
+const int buttonPin18 = A12; //1 button
+const int LEDPin18 = A13; //1 button
 
-const int buttonPin19 = A8; //1 button
-const int LEDPin19 = A9; //1 button
+const int buttonPin19 = A10; //1 button
+const int LEDPin19 = A11; //1 button
 
-const int buttonPin20 = A6; //1 button
-const int LEDPin20 = A7; //1 button
+const int buttonPin20 = A8; //1 button
+const int LEDPin20 = A9; //1 button
 
-const int buttonPin21 = A4; //1 button
-const int LEDPin21 = A5; //1 button
+const int buttonPin21 = A6; //1 button
+const int LEDPin21 = A7; //1 button
 
-const int buttonPin22 = A2; //1 button
-const int LEDPin22 = A3; //1 button
+const int buttonPin22 = A4; //1 button
+const int LEDPin22 = A5; //1 button
 
-const int buttonPin23 = 50; //1 button
-const int LEDPin23 = 51; //1 button
+const int buttonPin23 = A2; //1 button
+const int LEDPin23 = A3; //1 button
 
-int LEDs[24] = {
+int LEDs[23] = {
   LEDPin1,LEDPin2, LEDPin3, LEDPin4, LEDPin5, LEDPin6, 
-  LEDPin7, LEDPin8, LEDPin9, LEDPin10, LEDPin11, LEDPin12, 
+  LEDPin7, LEDPin8, LEDPin10, LEDPin11, LEDPin12, 
   LEDPin13, LEDPin14, LEDPin15, LEDPin16, LEDPin17, LEDPin18, 
   LEDPin19, LEDPin20, LEDPin21, LEDPin22, LEDPin23
   }; 
@@ -78,8 +78,8 @@ int LEDs[24] = {
 int RedLEDs[5] = {LEDPin2, LEDPin8, LEDPin10, LEDPin13, LEDPin16};
 int RedButtons[5] = {buttonPin2, buttonPin8, buttonPin10, buttonPin13, buttonPin16};
 
-int BlueLEDs[6] = {LEDPin1, LEDPin5, LEDPin9, LEDPin11, LEDPin15, LEDPin20};
-int BlueButtons[6] = {buttonPin1, buttonPin5, buttonPin9, buttonPin11, buttonPin15, buttonPin20};
+int BlueLEDs[5] = {LEDPin1, LEDPin5, LEDPin11, LEDPin15, LEDPin20};
+int BlueButtons[5] = {buttonPin1, buttonPin5,  buttonPin11, buttonPin15, buttonPin20};
 
 int YellowLEDs[6] = {LEDPin4, LEDPin7, LEDPin12, LEDPin18, LEDPin21, LEDPin23};
 int YellowButtonss[6] = {buttonPin4, buttonPin7, buttonPin12, buttonPin18, buttonPin21, buttonPin23};
@@ -90,9 +90,9 @@ int GreenButtons[6] = {buttonPin3, buttonPin6, buttonPin14, buttonPin17, buttonP
 boolean pressed1,pressed2, pressed3, pressed4, pressed5, pressed6, pressed7, pressed8, pressed9, pressed10, pressed11, pressed12, pressed13, pressed14, pressed15, pressed16, pressed17, pressed18, pressed19, pressed20, pressed21, pressed22, pressed23;
 bool pressingRed, pressingBlue, pressingYellow, pressingGreen;
 
-int Buttons[24] = {
+int Buttons[22] = {
   buttonPin1, buttonPin2, buttonPin3, buttonPin4, buttonPin5, buttonPin6, 
-  buttonPin7, buttonPin8, buttonPin9, buttonPin10, buttonPin11, buttonPin12,
+  buttonPin7, buttonPin8, buttonPin10, buttonPin11, buttonPin12,
   buttonPin13, buttonPin14, buttonPin15, buttonPin16, buttonPin17, buttonPin18,
   buttonPin19, buttonPin20, buttonPin21, buttonPin22, buttonPin23
 };
@@ -107,6 +107,17 @@ int level = 5;
 int incomingByte = 0; // for incoming serial data
 String prevStringValues;
 
+#include <Wire.h>
+
+const int MPU = 0x68; // MPU6050 I2C address
+float AccX, AccY, AccZ;
+float GyroX, GyroY, GyroZ;
+float accAngleX, accAngleY, gyroAngleX, gyroAngleY, gyroAngleZ;
+float roll, pitch, yaw;
+float AccErrorX, AccErrorY, GyroErrorX, GyroErrorY, GyroErrorZ;
+float elapsedTime, currentTime, previousTime;
+int c = 0;
+
 void setup() {
   //Serial.println(LEDPin18);
   //declare pinmode
@@ -118,7 +129,7 @@ void setup() {
   pinMode(buttonPin6, INPUT_PULLUP);
   pinMode(buttonPin7, INPUT_PULLUP);
   pinMode(buttonPin8, INPUT_PULLUP);
-  pinMode(buttonPin9, INPUT_PULLUP);
+  //pinMode(buttonPin9, INPUT_PULLUP);
   pinMode(buttonPin10, INPUT_PULLUP);
   pinMode(buttonPin10, INPUT_PULLUP);
   pinMode(buttonPin11, INPUT_PULLUP);
@@ -144,7 +155,7 @@ void setup() {
   pinMode(LEDPin6, OUTPUT);
   pinMode(LEDPin7, OUTPUT);
   pinMode(LEDPin8, OUTPUT);
-  pinMode(LEDPin9, OUTPUT);
+  //pinMode(LEDPin9, OUTPUT);
   pinMode(LEDPin10, OUTPUT);  
   pinMode(LEDPin11, OUTPUT);
   pinMode(LEDPin12, OUTPUT);
@@ -162,7 +173,7 @@ void setup() {
 
 
   //open serial port (USB)
-  Serial.begin(115200);
+  Serial.begin(19200);
   Serial.setTimeout(10);
   //disguise as a keyboard
 
@@ -192,6 +203,14 @@ void setup() {
 
   randomSeed(analogRead(0));
   prevStringValues = "";
+
+  Wire.begin();                      // Initialize comunication
+  Wire.beginTransmission(MPU);       // Start communication with MPU6050 // MPU=0x68
+  Wire.write(0x6B);                  // Talk to the register 6B
+  Wire.write(0x00);                  // Make reset - place a 0 into the 6B register
+  Wire.endTransmission(true);        //end the transmission
+  //calculate_IMU_error();
+  delay(20);
 }
 
 void loop() {
@@ -216,7 +235,7 @@ void loop() {
   }
   
   String currentValues = "";
-  for(int i = 0; i < 23; i++)
+  for(int i = 0; i < 22; i++)
   {
     if(digitalRead(Buttons[i]) == LOW)
     {
@@ -230,6 +249,12 @@ void loop() {
     currentValues += "|";
   }
   currentValues = currentValues.substring(0, currentValues.length()-1);
+//  currentValues += "&";
+//  currentValues += String(roll);
+//  currentValues += "|";
+//  currentValues += String(pitch);
+//  currentValues += "|";
+//  currentValues += String(yaw);
   //if(currentValues != prevStringValues)
   {
     Serial.println(currentValues);
@@ -342,17 +367,17 @@ void loop() {
     }
   }
 
-  if (digitalRead(buttonPin9) == LOW) {
-    if (!pressed9) {
-      digitalWrite(LEDPin9, HIGH);
-      pressed9 = true;
-    }
-  } else {
-    if (pressed9) {
-      digitalWrite(LEDPin9, LOW);
-      pressed9 = false;
-    }
-  }
+//  if (digitalRead(buttonPin9) == LOW) {
+//    if (!pressed9) {
+//      digitalWrite(LEDPin9, HIGH);
+//      pressed9 = true;
+//    }
+//  } else {
+//    if (pressed9) {
+//      digitalWrite(LEDPin9, LOW);
+//      pressed9 = false;
+//    }
+//  }
 
   if (digitalRead(buttonPin10) == LOW) {
     if (!pressed10) {
@@ -521,4 +546,59 @@ void loop() {
       pressed23 = false;
     }
   }
+  
+  
+}
+void calculate_IMU_error() {
+  // We can call this funtion in the setup section to calculate the accelerometer and gyro data error. From here we will get the error values used in the above equations printed on the Serial Monitor.
+  // Note that we should place the IMU flat in order to get the proper values, so that we then can the correct values
+  // Read accelerometer values 200 times
+  while (c < 200) {
+    Wire.beginTransmission(MPU);
+    Wire.write(0x3B);
+    Wire.endTransmission(false);
+    Wire.requestFrom(MPU, 6, true);
+    AccX = (Wire.read() << 8 | Wire.read()) / 16384.0 ;
+    AccY = (Wire.read() << 8 | Wire.read()) / 16384.0 ;
+    AccZ = (Wire.read() << 8 | Wire.read()) / 16384.0 ;
+    // Sum all readings
+    AccErrorX = AccErrorX + ((atan((AccY) / sqrt(pow((AccX), 2) + pow((AccZ), 2))) * 180 / PI));
+    AccErrorY = AccErrorY + ((atan(-1 * (AccX) / sqrt(pow((AccY), 2) + pow((AccZ), 2))) * 180 / PI));
+    c++;
+  }
+  //Divide the sum by 200 to get the error value
+  AccErrorX = AccErrorX / 200;
+  AccErrorY = AccErrorY / 200;
+  c = 0;
+  // Read gyro values 200 times
+  while (c < 200) {
+    Wire.beginTransmission(MPU);
+    Wire.write(0x43);
+    Wire.endTransmission(false);
+    Wire.requestFrom(MPU, 6, true);
+    GyroX = Wire.read() << 8 | Wire.read();
+    GyroY = Wire.read() << 8 | Wire.read();
+    GyroZ = Wire.read() << 8 | Wire.read();
+    // Sum all readings
+    GyroErrorX = GyroErrorX + (GyroX / 131.0);
+    GyroErrorY = GyroErrorY + (GyroY / 131.0);
+    GyroErrorZ = GyroErrorZ + (GyroZ / 131.0);
+    c++;
+  }
+  //Divide the sum by 200 to get the error value
+  GyroErrorX = GyroErrorX / 200;
+  GyroErrorY = GyroErrorY / 200;
+  GyroErrorZ = GyroErrorZ / 200;
+  // Print the error values on the Serial Monitor
+  Serial.print("AccErrorX: ");
+  Serial.println(AccErrorX);
+  Serial.print("AccErrorY: ");
+  Serial.println(AccErrorY);
+  Serial.print("GyroErrorX: ");
+  Serial.println(GyroErrorX);
+  Serial.print("GyroErrorY: ");
+  Serial.println(GyroErrorY);
+  Serial.print("GyroErrorZ: ");
+  Serial.println(GyroErrorZ);
+
 }
